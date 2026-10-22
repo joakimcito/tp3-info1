@@ -1,26 +1,27 @@
 #include <stdio.h>
 
-
+// link al repositorio: https://github.com/joakimcito/tp3-info1.git
 int main(void) {
 	float altura;
 	float peso;
 	
 	printf("Hola, le pedire que ingrese los datos que se le pidan a continuacion\n");
+	//se usa un bucle do while para crear un bucle donde la condicion de corte sea ingresar bien lo valores
+	do{
+		printf("Ingrese aqui su altura\n");
+		scanf("%f", &altura);
+		printf("ingrese su peso aqui\n"); 
+		scanf("%f", &peso);
+		if(altura <= 0 || peso <= 0){
+			printf("los valores ingresados deben ser positivos unicamente\n");
+	}
+	} while(altura <= 0 || peso <= 0);
 	
-	//PETICION DE ALTURA
-	printf("Ingrese aqui su altura\n");
-	scanf("%f", &altura);
-	
-	//PETICION DE PESO 
-	printf("ingrese su peso aqui\n"); 
-	scanf("%f", &peso);
-	 
-	
-	// Hacer el calculo del indice de masa coorporal
+	// el calculo del indice de masa coorporal
 	float vault_IMC;
 	vault_IMC = peso/(altura*altura);
 	
-	printf("el valor del indice de masa corporal es de: %2.f \n", vault_IMC);
+	printf("el valor del indice de masa corporal es de: %.2f \n", vault_IMC);
 	printf("ahora compara el resultado que nos da la operacion con el siguiente cuadro\n\n" );
 	printf(
 		   "Indice       | Condicion\n"
@@ -40,8 +41,9 @@ int main(void) {
 	else if(vault_IMC>=29.9)
 		printf("Obesidad\n");
 	
-	
-	
 	return 0;
-}
+} 
+	
+
+
 
