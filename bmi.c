@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 
 
@@ -31,6 +30,16 @@ int main(void) {
 		   "25.0 a 29.9  | Sobrepeso\n"
 		   ">=30         | Obesidad\n"
 		   );
+	printf("El estado actual de tu BMI es:\n");
+	if(vault_IMC<18.5)
+		printf("Bajo de peso\n");
+	else if(vault_IMC>=18.5&&vault_IMC<24.9)
+		printf("Normal\n");
+	else if(vault_IMC>=24.9&&vault_IMC<29.9)
+		printf("Sobrepeso\n");
+	else if(vault_IMC>=29.9)
+		printf("Obesidad\n");
+	
 	
 	
 	return 0;
